@@ -1,5 +1,4 @@
-# Exercise Frontend Reactjs
-# Ejercicio de Frontend
+# Exercise Frontend Reactjs Hackademy
 Este ejercicio es para que puedas definir qué tecnología de Frontend te interesa y que nosotros podamos conocer un poco más sobre tu perfil y habilidades.
 
 ## Ejercicio 1
