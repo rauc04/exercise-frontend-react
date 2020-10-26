@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+
+:root {
+   --primary-color: #5363f6;
+   --primary-light-color: #6a78fa;
+   --dark-color: #0e1f47;
+   --secondary-color: #f2f2f2;
+   --danger-color: #DA1C5C;
+   --input-color: #80868B;
+   --border-color: #DADCE0;
+   --font-f: 'Montserrat', sans-serif;
+   --font-size-normal: .938rem;
+}
+
+*,::before,::after {
+   box-sizing: border-box;
+}
+
+body {
+   margin: 0;
+   padding: 0;
+   font-family: var(--font-f);
+   font-size: var(--font-size-normal);
+   color: var(--primary-color);
+}
+
+h1 {
+   margin: 0;
+}
+
+image {
+   max-width: 100%;
+   height: auto;
+   display: block;
+}
+
+.main {
+   display: grid;
+   grid-template-columns: 100%;
+   height: 100vh;
+   margin-left: 1.5rem;
+   margin-right: 1.5rem;
+}
+
+.container {
+   display: grid;
+}
+
+.content-img {
+   justify-self: center;
+}
+
+.content-img img {
+   width: 310px;
+   margin-top: 1.5rem;
+}
+
+.content-form {
+   position: relative;
+   height: 368px;
+}
+
+.title-top {
+   position: absolute;
+   margin-top: 50px;
+}
+
+.btn-primary{
+   display: block;
+   padding: 1rem;
+   margin: 2rem 0;
+   background-color: var(--primary-color);
+   color: #FFF;
+   font-weight: 500;
+   text-align: center;
+   border-radius: .5rem;
+   transition: .3s;
+   width: 100%;
+   border: none;
+}
+ 
+.btn-primary:hover{
+   background-color:var(--primary-light-color);
+}
+
+.form__ {
+   position: absolute;
+   width: 100%;
+   bottom: 1rem;
+   background-color: var(--secondary-color);
+   padding: 2rem 1rem;
+   border-radius: 1rem;
+   text-align: center;
+   box-shadow: 0 8px 20px rgba(35, 0, 77, .2);
+   animation-duration: .4s;
+   animation-name: animate-form;
+}
+
+@keyframes animate-form {
+   0% {
+      transform: scale(1,1);
+   }
+   50% {
+      transform: scale(1.1,1.1);
+   }
+   100% {
+      transform: scale(1,1);
+   }
+}
+
+.title {
+   font-size: 1.5rem;
+   margin-bottom: 2rem;
+   color: var(--dark-color);
+}
+
+.t-field {
+   position: relative;
+   height: 48px;
+   margin-bottom: 1.5rem;
+}
+
+.t-input {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   font-size: var(--font-size);
+   border: 1px solid var(--border-color);
+   border-radius: .5rem;
+   outline: none;
+   padding: 1rem;
+   background: none;
+   z-index: 1;
+}
+
+.t-label {
+   position: absolute;
+   left: 1rem;
+   top: 1rem;
+   padding: 0 .25rem;
+   background-color: var(--secondary-color);
+   color: var(--input-color);
+   transition: .3s;
+}
+
+.t-input:focus + .t-label {
+   top: -.5rem;
+   left: .8rem;
+   color: var(--primary-color);
+   font-size: var(--font-size-small);
+   font-weight: 500;
+   z-index: 10;
+}
+
+.t-input:not(:placeholder-shown).t-input:not(:focus)+.t-label {
+   top: -.5rem;
+   left: .8rem;
+   font-size: var(--font-size-small);
+   font-weight: 500;
+   z-index: 10;
+}
+
+.t-input:focus {
+   border: 2px solid var(--primary-color);
+}
+
+.t-input.t-input-error {
+   border-color: var(--danger-color);
+}
+
+.t-label.t-label-error {
+   color: var(--danger-color);
+}
+
+.t-input.t-input-error:focus + .t-label {
+   color: var(--danger-color);
+}
+
+.message-error {
+   color: var(--danger-color);
+   text-align: left;
+}
+
+@media screen and (min-width: 576px){
+   .content-form {
+      width: 348px;
+      justify-self: center;
+   }
+}
+
+@media screen and (min-width: 1024px) {
+   .main {
+      height: 100vh;
+      overflow: hidden;
+   }
+
+   .container {
+      grid-template-columns: repeat(2, max-content);
+      justify-content: center;
+      align-items: center;
+      margin-left: 10rem;
+   }
+
+   .content-img {
+      display: flex;
+      width: 600px;
+      height: 588px;
+      background-color: var(--secondary-color);
+      border-radius: 1rem;
+      padding-left: 1rem;
+   }
+
+   .content-img img {
+      width: 390px;
+      margin-top: 0;
+   }
+
+   .form__ {
+      left: -11rem;
+      bottom: -5.5rem;
+   }
+}
